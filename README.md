@@ -1,2 +1,2 @@
 # trainingQGIS
-QGIS Training Files
+QGIS Training Files.
