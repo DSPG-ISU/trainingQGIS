@@ -18,17 +18,6 @@
     },
     {
       "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -17.9296875,
-          53.5403073915002
-        ]
-      }
-    },
-    {
-      "type": "Feature",
       "properties": {
         "stroke": "#fffc00",
         "stroke-width": 2,
