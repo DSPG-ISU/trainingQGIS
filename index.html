@@ -41,21 +41,21 @@ Today you will be introduced to GIS using the free and opensource software <a hr
 1. Introduction to GIS
  - <a href="https://geojson.io" target="_blank">Geojson.io</a>
  - <a href="https://qgis.org" target="_blank">QGIS.org</a> and Exploring Sample Data
-1. QGIS Interface and Custom Setup
-1. Adding Data
-1. Creating a Thematic Map (vacation states)
-1. Map Symbolization I (basic labeling if time permits)
+1. QGIS Interface, Custom Setup and Adding Data
+1. Using table attributes to create a Thematic Map (vacation states)
+1. Map Symbolization I
+1. Map Query and Export
   
 *Lunch Break*
 
+1. Basic labeling of map features
 1. Table editing (modify the vacation states table)
 1. Accessing Census Data and Geometry
 1. Joining Census Data to map Geometry
+1. Spatial Join (Crash Data to County)
 1. Map Symbolization II 
-1. Map Layout
-1. Map Query and Export
 1. Intro to Geoprocessing: Summer Roadtrip Route (Buffers and Intersect)
-1. Spatial Join
+1. Map Print Layout
  
 
 
@@ -132,16 +132,6 @@ Aerial imagery and weather radar
 
 ---
 
-#### Intro to GIS
-We will start out by using a program that is not actually a GIS, but is a great helper tool for creating GIS files.
-
-Please open up GeoJSON.io and follow along!
-
-<img src="tutorials/introGIS/geojson.png" alt="" style="width: 100%;"/>
-
----
-
-
 #### Intro to GIS: File formats
 There are several GIS file formats, a few common ones include:
 
@@ -190,18 +180,29 @@ https://www.newscientist.com/article/2177132-new-world-map-is-a-more-accurate-ea
 
 ---
 
+#### Intro to GIS: GeoJSON.io
+We will start out by using a program that is not actually a GIS, but is a great helper tool for creating GIS files and learning about attributes and geometry
+
+Please open up https://GeoJSON.io and follow along!
+
+<img src="tutorials/introGIS/geojson.png" alt="" style="width: 100%;"/>
+
+---
+#### Intro to GIS: GeoJSON.io
+
+Beware of the order of latitude and longitude!
+
+<img src="tutorials/introGIS/geojson-io.png" alt="" style="width: 100%;"/>
+
+---
+
 #### GeoJSON and GitHub
 
-<img src="
-https://2oqz471sa19h3vbwa53m33yj-wpengine.netdna-ssl.com/wp-content/uploads/2020/02/true-size-of-africa.jpg" alt="" style="width: 70%;"/>
-
+<img src="tutorials/introGIS/github_geojson.png" alt="" style="width: 100%;"/>
 
 ---
 
 
-
-
---- 
 
 #### QGIS Interface
 
@@ -234,8 +235,130 @@ https://2oqz471sa19h3vbwa53m33yj-wpengine.netdna-ssl.com/wp-content/uploads/2020
 
 1. Start a new map
 1. Add the vacation.shp file
+1. Map Navigation
+1. Inspect the layer's attribute (feature) table
+1. Select (and info) and Query the map features
+1. Symbolize the map features
+1. Query the map features
+1. Filter the attribute table
+1. Edit the feature table
+1. Add feature labels
 
-<img src="tutorials/introGIS/qgisPlugins.png" alt="" style="width: 80%;"/>
+<img src="tutorials/introGIS/vacationThematicMap.png" alt="" style="width: 80%;"/>
+
+---
+#### Mapping Census Data (Table Joins)
+1. Accessing Census Data and Geometry
+1. Cleaning Census Data
+1. Start New Map and add US County data as 20 or 5 meter
+1. Symbolize by State, add state layer and hide county lines
+1. Joining Census Data to map Geometry using GEOID values
+1. Query and Symbolize the data
+1. Explore the attributes table (time permitting)
+
+<img src="tutorials/introGIS/statesCategorized.png" alt="" style="width: 90%;"/>
+
+
+---
+#### Selected Census Fields
+
+- **DP02_0001E** Total households (Estimates)
+- **DP02_0059PE** Population 25 years and over-Less than 9th grade (Percent)
+- **DP02_0151E** Total households with a computer (Estimate)
+- **DP02_0151M** Total households with a computer (MOE)
+- **DP02_0151PE** Total households with a computer (Percent)
+- **DP02_0151PM** Total households with a computer (Percent MOE)
+- **DP02_0152E** Households with a broadband Internet subscription (Estimate)
+- **DP02_0152M** Households with a broadband Internet subscription (MOE)
+- **DP02_0152PE** Households with a broadband Internet subscription (Percent)
+- **DP02_0152PM** Households with a broadband Internet subscription (Percent MOE)
+
+<img src="tutorials/introGIS/education10computer85.png" alt="" style="width: 60%;"/>
+
+---
+#### Mapping Crash Data - Acquiring the data
+
+Data Source <a href="https://icat.iowadot.gov" target="_blank"> Iowa DOT Crash Analysis Tool </a> 
+
+<img src="tutorials/introGIS/iowaCrashData1.png" alt="" style="width: 90%;"/>
+
+---
+
+#### Mapping Crash Data - Acquiring the data
+
+Select 2010 and then a condition where driver was under the influence = 1,976 crashes
+
+<img src="tutorials/introGIS/iowaCrashData2.png" alt="" style="width: 90%;"/>
+
+---
+
+#### Mapping Crash Data - Acquiring the data
+
+Display tabular data, note X and Y coordinate system is UTM NAD 83 Zone 15
+
+<img src="tutorials/introGIS/iowaCrashData3.png" alt="" style="width: 90%;"/>
+
+---
+
+#### Mapping Crash Data - Acquiring the data
+
+Select columns to export 
+
+<img src="tutorials/introGIS/iowaCrashData4.png" alt="" style="width: 100%;"/>
+
+---
+
+#### Mapping Crash Data - Acquiring the data
+
+Review the data before and after export to a csv
+
+<img src="tutorials/introGIS/iowaCrashData5.png" alt="" style="width: 100%;"/>
+
+---
+
+#### Mapping Crash Data - Adding CSV to QGIS
+
+<img src="tutorials/introGIS/iowaCrashData6.png" alt="" style="width: 100%;"/>
+
+---
+
+
+
+#### Mapping Crash Data - creating a Spatial Table Join
+
+1. Start New Map
+1. Spatial Join (Crash Data to County)
+1. Map Symbolization II 
+
+<img src="tutorials/introGIS/vacationThematicMap.png" alt="" style="width: 80%;"/>
+
+
+---
+#### Geoprocessing
+
+1. Intro to Geoprocessing: Summer Roadtrip Route (Buffers and Intersect)
+1. Map Print Layout
+
+<img src="tutorials/introGIS/vacationThematicMap.png" alt="" style="width: 80%;"/>
+
+---
+
+#### QGIS, GIS and Mapping Training Resources
+
+- QGIS
+ - <a href="https://www.extension.iastate.edu/communities/gis/quicktasksheets" target="_blank"> ISU GIS Tasksheets </a> (A full list of these will be distributed next week)
+ - <a href="https://www.qgistutorials.com/en/" target="_blank"> QGIS Tutorials and Tips </a>
+ - <a href="https://docs.qgis.org/3.10/en/docs/user_manual/index.html" target="_blank"> QGIS User Guide </a>
+- GeoJSON Utilites
+ - Mapshaper https://mapshaper.org
+  - <a href="https://jasonheppler.org/courses/csu-workshop/geojson-utilities.html" target="_blank"> GeoJSON Utilities List </a>
+- Web Mapping
+ - Leaflet https://leafletjs.com
+ - Leaflet https://leaflet-extras.github.io/leaflet-providers/preview/
+- Turf https://turfjs.org/docs/
+
+
+
 
 
 
