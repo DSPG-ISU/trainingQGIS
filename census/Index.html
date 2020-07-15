@@ -100,38 +100,129 @@ Special thanks to Sandy Burke for shairing her Data Literacy slide deck.
   
 ---
  ## Census Data Profiles
- <a href="https://www.census.gov/acs/www/data/data-tables-and-tools/data-profiles/" target="_blank"> ACS Data Profiles</a> 
+ <a href="https://www.census.gov/acs/www/data/data-tables-and-tools/data-profiles/" target="_blank">ACS Data Profiles</a> 
  
  <img src="images/censusIntro_21.png" width = 100%>
  
 ---
-Census Data API User Guide
- https://www.census.gov/content/dam/Census/data/developers/api-user-guide/api-guide.pdf
+## Census Data API
+
+### Resources: 
+1. <a href="https://www.census.gov/content/dam/Census/data/developers/api-user-guide/api-guide.pdf" target="_blank">Census Data API User Guide</a> 
+
+1. Census API 101,  July 13  <a href="https://bit.ly/census-api" target="_blank">bit.ly/census-api </a>
+
+1. <a href="https://api.census.gov/data/2019/pep.html" target="_blank">Population Estimates API</a>
+
+1. <a href="https://www.census.gov/data/developers/data-sets/acs-5year.html" target="_blank">American Community Survey 5-Year Data (2009-2018) API</a>
+
+ - <a href=" https://api.census.gov/data/2018/acs/acs5/groups/B19001.html" target="_blank">Product Variables</a>
  
+ - <a href="https://api.census.gov/data/2018/acs/acs5/examples.html" target="_blank">Geographic Variables</a>
+ 
+ - Unweighted sample count of population estimate <a href="https://api.census.gov/data/2018/acs/acs5?get=B00001_001E&for=county:*&in=state:19&key=2262c1fc0eef6cad5904156cf19431e018638c1c" target="_blank">api.census.gov/data/2018/acs/acs5?get=B00001_001E&for=county:*&in=state:19&key=myKey</a>
+
+ - Household Income in the Past 12 Months <a href="https://api.census.gov/data/2018/acs/acs5?get=B19001_001M&for=county:*&in=state:19&key=2262c1fc0eef6cad5904156cf19431e018638c1c" target="_blank">api.census.gov/data/2018/acs/acs5?get=B19001_001M&for=county:*&in=state:19&key=myKey</a>
+ 
+
 ---
+### Census Academy - https://www.census.gov/data/academy.html
+
+1. <a href="https://www.census.gov/library/video/2020/using-api-all-results-for-acs-table.html?utm_campaign=20200121mscacs1ccstars&utm_medium=email&utm_source=govdelivery" target="_blank">Using the API to Get All Results for an ACS Table, January 15, 2020 </a>
+ 
+1. <a href="https://www.census.gov/library/video/2020/using-api-results-for-multiple-estimates.html?utm_campaign=20200121mscacs1ccstars&utm_medium=email&utm_source=govdelivery" target="_blank">Using the API to Get Results for Multiple Estimates, January 15, 2020</a> 
+
+1. <a href="https://www.census.gov/data/academy/webinars/2019/api-acs.html" target="_blank">Using the Census API with the American Community Survey
+JUNE 26, 2019  </a> 
+
+1. <a href="https://www.census.gov/data/academy/courses/ranking-project.html?#" target="_blank">Census Data with R (1-2 hrs)</a> 
+
+1. <a href="https://www.census.gov/data/academy/courses/choroplethr.html?#" target="_blank">Mapping Census Bureau Data in R with Choroplethr (3-4 hrs, Developed and presented by Ari Lamstein.)</a> 
+ 
+1. <a href="https://www.census.gov/data/academy/data-gems/2019/select-your-area.html" target="_blank">DATA GEMS: How to Select Your Area to Access Data Using data.census.gov </a> 
+
+1. <a href="https://www.census.gov/data/academy/courses/open-mapping-education.html?#" target="_blank">Open Mapping Education Series - Learn how to map Census Bureau data using OpenStreetMap and Geographic Information System (GIS) (2 hrs) Developed and presented by Maggie Cawley and Steven Johnson</a> 
 
 
 ---
+##Social Explorer Data Dictionary
+
+Be carefull ...
+
+<a href="https://www.socialexplorer.com/data/ACS2009_5yr/metadata/?ds=ACS09_5yr&table=B19001" target="_blank">Household Income in the Past 12 Months</a>
+
+
+<a href="https://www.socialexplorer.com/data/ACS2009_5yr/metadata/?ds=SE&table=A01001" target="_blank">Age
+</a>
+
+<img src="images/socialExplorerDataDictionary.png" width = 90%>
+
+---
+
+## Grrrr API changes ...
+
+Recently the API syntax was changed, this required a slight modification to the URL. this is why using a package might be and advantage as the main part of the URL can be updated centrally.
+
+https://api.census.gov/data/2016/acs5/profile?
+
+https://api.census.gov/data/2018/acs/acs5?
+https://api.census.gov/data/2018/acs/acs1?
+
+
+The variable codes also changed - there is now an extra 0 ...
+
+---
+##R Packages
+
+
+####tidycensus
+Maintainer: Kyle Walker
+R package that allows users to interface with the Census Bureau’s Decennial Census and five-year American Community APIs and return tidyverse-ready data frames, optionally with simple feature geometry included.
+
+####censusapi
+Maintainer: Hannah Recht
+censusapi is an accessor for the Census Data APIs. As of 2017 over 200 Census API endpoints are available, including Decennial Census, American Community Survey, Poverty Statistics, and Population Estimates APIs. This package is designed to let you get data from all of those APIs using the same main function — getCensus— and the same syntax for each dataset.
+
+---
+### TidyCensus
+
+1. https://walker-data.com/tidycensus/
+ - <a href="https://github.com/walkerke/tidycensus" target="_blank">GitHub Repo
+</a>
+ - <a href="https://walker-data.com/tidycensus/articles/basic-usage.html" target="_blank">Basic Usage
+</a>
+ - <a href="https://walker-data.com/tidycensus/articles/spatial-data.html" target="_blank">Spatial Data</a>
+ 
+1. DataCamp - Analyzing US Census Data in R
+
+1. You Tube incudes several users demonstrations - for example https://www.youtube.com/watch?v=QW39e-ydytA
  
 ---
+## Additional Items
+
+
+Census boundary and GIS
+- <a href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html" target="_blank">Cartographic Boundary Files - Shapefile</a>
+ 
+- <a href="https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.2010.html" target="_blank">TIGER/Line Shapefiles </a>
  
 ---
- 
+## Additional Items
+
+<a href="https://ipums.org" target="_blank">IPUMS</a>
+
+<a href="https://developer.ipums.org" target="_blank">Developer API </a>
+
+about <a href="IPUMS https://ipums.org/what-is-ipums" target="_blank">IPUMS</a>
+
+<img src="images/IPUMS.png" width = 60%>
+
 ---
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-   This is the temporary landing page for <a href="day1.html" target="_blank">Lecture 1</a> and <a href="day2.html" target="_blank">Lecture 2</a>.
-    ---
+
+    
+    <img src="images/demystifyAPI.png" width = 60%>
+
+---
 
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
